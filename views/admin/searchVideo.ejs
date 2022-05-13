@@ -2,8 +2,7 @@
 
     <!-- <h3>Find Videos</h3><br>
     <form action="" method="POST" >
-        <input type="text" name="VideoName" placeholder="tittle" required>
-        <input type="submit">
+        
 
         <table width="50%">
 
@@ -48,9 +47,27 @@
             <hr class="sidebar-divider my-0">
 
             <li class="nav-item active">
+                
+            <% if(user.is_admin===1){
+            %>
+                <a class="nav-link" href="/admin/home">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a><%
+            }
+            else if(user.is_Mentor===1){
+                    %><a class="nav-link" href="/mentorHome">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a><%
+            }
+            else{
+                        %>
                 <a class="nav-link" href="/home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span></a><%
+            }
+                
+                    %>
+
             </li>
 
 
