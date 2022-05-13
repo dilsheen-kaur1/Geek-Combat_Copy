@@ -146,7 +146,8 @@ const verifyLogin = async (req, res) => {
 const loadHome = async (req, res) => {
     try {
         const userData = await User.findById({ _id: req.session.user_id })
-        res.render('home', { user: userData });
+        const feed=userData.feedBack;
+        res.render('home', { user: userData,feedback:feed});
     } catch (error) {
         console.log(error.message);
     }

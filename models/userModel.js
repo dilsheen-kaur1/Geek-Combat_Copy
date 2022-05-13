@@ -62,6 +62,10 @@ const userSchema = new mongoose.Schema({
         required:true,
         default:0
     },
+    mentee:[{
+        mentee_name:{type:String,required:true},
+        mentee_avg:{type:String,required:true}
+    }]
 });
 
 

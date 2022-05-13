@@ -5,6 +5,7 @@ const randomstring = require('randomstring')
 const config = require('../config/config')
 const nodemailer = require('nodemailer');
 const Mail = require('nodemailer/lib/mailer');
+const { find } = require("../models/userModel");
 
 const addUserMail = async (name, email, password, userId) => {
     try {
@@ -361,6 +362,7 @@ const loadscheduledInterview = async (req, res) => {
 //Searching the video 
 const loadAllVideos = async (req, res) => {
     try {
+        const user=await User.findById({_id:req.session.user_id})
         const arr = [];
         const userData = await User.find({ is_Mentor: 1 })
         
@@ -375,7 +377,7 @@ const loadAllVideos = async (req, res) => {
                 }
             }
         }
-        res.render('searchVideo', { videoArr: arr });
+        res.render('searchVideo', { videoArr: arr, user:user });
     } catch (error) {
         console.log(error.message);
     }
