@@ -1,33 +1,7 @@
 <%- include('../layouts/header.ejs')%>
 
-    <!-- <h3>Welcome Trainee, <%= user.name %></h3><br>
-<a href = "/check-course">Check Course</a><br><br>
-<table width="50%">
-    <tr>
-        <td><img src="userImages/<%= user.image%>" height="200px" width="500px" alt="<%= user.image%>"></td>
-        
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td><%= user.email%></td>
-    </tr>
-    <tr>
-        <td>Mobile</td>
-        <td><%= user.mobile%></td>
-    </tr>
-    <tr>
-        <td>Average Marks</td>
-        <td><%=user.avg_marks%></td>
-    </tr>
-    
-</table>
-
-<a href="/edit?id=<%= user._id%>">Edit</a><br>
-<a href="/logout">Logout</a> -->
-
-
-    <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
                 <div class="sidebar-brand-text mx-3">To The New</div>
@@ -56,9 +30,8 @@
 
             <hr class="sidebar-divider d-none d-md-block">
 
-        </ul>
-
-        <div id="content-wrapper" class="d-flex flex-column">
+    <div class="d-flex flex-column w-100">
+        <div id="content-wrapper" class="d-flex flex-column h-100">
 
             <div id="content">
 
@@ -127,7 +100,6 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
                                     <thead>
                                         <tr>
                                             <th>Topics</th>
@@ -166,7 +138,7 @@
             </div>
 
         </div>
-
+        <%- include('../layouts/footer.ejs')%>
     </div>
 
 

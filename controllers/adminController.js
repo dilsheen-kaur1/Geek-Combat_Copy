@@ -341,6 +341,7 @@ const addVideo = async (req, res) => {
 
 const loadscheduledInterview = async (req, res) => {
     try {
+        const userData=await User.findById({_id:req.session.user_id})
         const users=[]
         const user=await User.find({_id:req.session.user_id})
         for(let i=0;i<=user.length-1;i++){
@@ -352,7 +353,7 @@ const loadscheduledInterview = async (req, res) => {
                     users.push(sample);
                 }
         }
-        res.render('scheduledInterview',{users:users});
+        res.render('scheduledInterview',{users:users,userData:userData});
     } catch (error) {
         console.log(error.message)
     }

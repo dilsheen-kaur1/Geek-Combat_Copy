@@ -1,75 +1,73 @@
 <%- include('../layouts/header.ejs')%>
 
-<!-- <a href = "/scheduledInterview">Scheduled Interview</a><br><br>
-<a href = "/findTrainee">Find Trainee</a><br><br>
-<a href = "/AddVideo">Add Video</a><br><br> --> 
 
-    <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/mentorHome">
-                <div class="sidebar-brand-text mx-3">To The New</div>
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/mentorHome">
+            <div class="sidebar-brand-text mx-3">To The New</div>
+        </a>
+
+        <hr class="sidebar-divider my-0">
+
+        <li class="nav-item active">
+            <a class="nav-link" href="/mentorHome">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <hr class="sidebar-divider">
+
+        <div class="sidebar-heading">
+            Interviews
+        </div>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/scheduledInterview">
+                <i class="fas fa-fw fa-clipboard-list"></i>
+                <span>Scheduled</span>
             </a>
+        </li>
 
-            <hr class="sidebar-divider my-0">
+        <li class="nav-item">
+            <a class="nav-link" href="/findTrainee">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Find Trainee</span></a>
+        </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="/mentorHome">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+        <hr class="sidebar-divider">
 
-            <hr class="sidebar-divider">
+        <div class="sidebar-heading">
+            Addons
+        </div>
 
-            <div class="sidebar-heading">
-                Interviews
-            </div>
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/add-video">
+                <i class="fas fa-fw fa-video"></i>
+                <span>Add Video</span></a>
+        </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/scheduledInterview">
-                    <i class="fas fa-fw fa-clipboard-list"></i>
-                    <span>Scheduled</span>
-                </a>
-            </li>
+        <hr class="sidebar-divider d-none d-md-block">
 
-            <li class="nav-item">
-                <a class="nav-link" href="/findTrainee">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Find Trainee</span></a>
-            </li>
+    </ul>
 
-            <hr class="sidebar-divider">
-
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/add-video">
-                    <i class="fas fa-fw fa-video"></i>
-                    <span>Add Video</span></a>
-            </li>
-
-            <hr class="sidebar-divider d-none d-md-block">
-
-        </ul>
-
-        <div id="content-wrapper" class="d-flex flex-column">
+    <div class="d-flex flex-column w-100">
+        <div id="content-wrapper" class="d-flex flex-column h-100">
 
             <div id="content">
-
+    
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
+    
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
+    
                     <h4>Welcome Mentor!</h4>
-
+    
                     <ul class="navbar-nav ml-auto">
-
+    
                         <div class="topbar-divider d-none d-sm-block"></div>
-
+    
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,7 +77,7 @@
                                 <img src="userImages/<%= user.image%>" alt="user-image"
                                     class="img-profile rounded-circle">
                             </a>
-
+    
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="/logout" data-toggle="modal" data-target="#logoutModal">
@@ -88,19 +86,19 @@
                                 </a>
                             </div>
                         </li>
-
+    
                     </ul>
-
+    
                 </nav>
-
+    
                 <div class="container-fluid">
-
+    
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
                     </div>
-
+    
                     <div class="row">
-
+    
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
@@ -117,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-
+    
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
@@ -133,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-
+    
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
@@ -150,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="row">
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
@@ -173,35 +171,33 @@
                             </div>
                         </div>
                     </div>
-
+    
                 </div>
-
+    
             </div>
-
+    
         </div>
-
+        <%- include('../layouts/footer.ejs')%>
     </div>
+    
+</div>
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/logout">Logout</a>
-                </div>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="/logout">Logout</a>
             </div>
         </div>
     </div>
-
-<!-- <a href="/edit?id=<%= user._id%>">Edit</a><br> -->
-
-    <%- include('../layouts/footer.ejs')%>
+</div>
