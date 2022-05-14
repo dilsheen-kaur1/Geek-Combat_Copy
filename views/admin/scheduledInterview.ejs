@@ -1,43 +1,6 @@
 <%- include('../layouts/header.ejs')%>
 
-    <!-- <h1>Scheduled Interviews</h1>
-<a href="/admin">Home</a>
-<br><br>
-</noscript>
-
-<table width="50%">
-
-    <tr>
-        <th>Trainee Name</th>
-        <th>Trainee Email</th>
-        <th>Traine Contact Number</th>
-        <th>Date</th>
-        <th>Add FeedBack</th>
-    </tr>
-    <%
-     if(users.length>0){
-         for(let i = 0; i<users.length; i++){
-             
-         %>
-            <tr>
-
-                <td><%= users[i].name %></td>
-                <td><%= users[i].email %></td>
-                <td><%= users[i].mobile %></td>
-                <td><%= users[i].date %></td>
-                <td><a href="/admin/addFeed?id=<%= users[i]._id %>">Add Feed</a></td>
-            </tr>
-        <%}
-     }else{
-         %>
-         <tr>
-             <td colspan="5"> Users Not found </td>
-         </tr>
-         <%
-     }
-    %>
-
-</table> -->
+ 
 
 <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
