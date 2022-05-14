@@ -321,7 +321,8 @@ const scheduleInterview = async (req, res) => {
 
 const loadaddVideo = async (req, res) => {
     try {
-        res.render('addVideo');
+        const userData=await User.findById({_id:req.session.user_id})
+        res.render('addVideo',{userData:userData});
     } catch (error) {
         console.log(error.message)
     }

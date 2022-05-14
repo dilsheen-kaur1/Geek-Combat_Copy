@@ -1,18 +1,70 @@
-<% include('../layouts/header.ejs')%>
-<%
-    if(typeof message !== 'undefined'){
-        %>
-        <p style="color:red;"><%= message %></p>
-        <%
-    }
-%>
-<h3>Add Video</h3><br>
-<form action="" method="POST" enctype="multipart/form-data">
-    <input type="text" name="title" placeholder="Tittle of the video" required><br><br>
-    <input type="text" name="description" placeholder="Description" ><br><br>
-    <input type = "file" name = "video"  required><br><br>
-    <input type="submit">
-</form>
+<%- include('../layouts/header.ejs')%>
 
 
-<% include('../layouts/footer.ejs')%>
+
+<div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+            <div class="sidebar-brand-text mx-3">To The New</div>
+        </a>
+
+        <hr class="sidebar-divider my-0">
+
+        <li class="nav-item active">
+            <% if(userData.is_admin===1){
+                %>
+                    <a class="nav-link" href="/admin/home">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span></a><%
+                }
+                else if(userData.is_Mentor===1){
+                        %><a class="nav-link" href="/mentorHome">
+                            <i class="fas fa-fw fa-tachometer-alt"></i>
+                            <span>Dashboard</span></a><%
+                }%>
+        </li>
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+    </ul>
+
+    <div class="d-flex flex-column w-100">
+        <div id="content-wrapper" class="d-flex flex-column h-100">
+
+            <div id="content">
+    
+                <div class="container-fluid mt-5 w-75">
+    
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Upload Video Interview</h6>
+                        </div>
+                        <div class="card-body">
+                            <form class="user" action="" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        id="exampleInputTitle" placeholder="Enter Tittle..." required name="title">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        id="exampleInputDesc" placeholder="Enter Description..." required name="description">
+                                </div>
+                                <input type="file" class="mb-3" id="exampleInputFile"
+                                    placeholder="Video" name = "video" required>
+    
+                                <input type = "submit" value="Add" class="btn btn-primary btn-user btn-blockr" style="width: 100%;">
+                            </form>
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+        <%- include('../layouts/footer.ejs')%>
+    </div>
+</div>
+
+

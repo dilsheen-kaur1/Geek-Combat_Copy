@@ -33,34 +33,17 @@
 <div id="wrapper">
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/mentorHome">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/admin/home">
             <div class="sidebar-brand-text mx-3">To The New</div>
         </a>
 
         <hr class="sidebar-divider my-0">
 
         <li class="nav-item active">
-            <% if(userData.is_admin===1){
-                %>
-                    <a class="nav-link" href="/admin/home">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a><%
-                }
-                else if(userData.is_Mentor===1){
-                        %><a class="nav-link" href="/mentorHome">
-                            <i class="fas fa-fw fa-tachometer-alt"></i>
-                            <span>Dashboard</span></a><%
-                }
-                else{
-                            %>
-                    <a class="nav-link" href="/home">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard</span></a><%
-                }
-                    
-                        %>
+            <a class="nav-link" href="/admin/home">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
         </li>
-
 
         <hr class="sidebar-divider d-none d-md-block">
 
@@ -71,56 +54,25 @@
 
             <div id="content">
     
-                <div class="container-fluid mt-5">
+                <div class="container-fluid mt-5 w-75">
     
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Scheduled Interviews</h1>
-                    </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Trainee Details</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Schedule Interview</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Mobile Number</th>
-                                            <th>Date</th>
-                                            <th>Add Feedback</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <% if(users.length>0){
-                                            for(let i = 0; i<users.length; i++){ %>
-                                                <tr>
+                            <form class="user" action="" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        id="exampleInputYoj" placeholder="Enter Year Of Joining..." required name="yoj">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user"
+                                        id="exampleInputDate" placeholder="Enter Interview Date(dd/mm/yyyy)..." required name="mydate">
+                                </div>
     
-                                                    <td>
-                                                        <%= users[i].name %>
-                                                    </td>
-                                                    <td>
-                                                        <%= users[i].email %>
-                                                    </td>
-                                                    <td>
-                                                        <%= users[i].mobile %>
-                                                    </td>
-                                                    <td>
-                                                        <%= users[i].date %>
-                                                    </td>
-                                                    <td><a href="/admin/addFeed?id=<%= users[i]._id %>">Add</a>
-                                                    </td>
-                                                </tr>
-                                                <%} }else{ %>
-                                                    <tr>
-                                                        <td colspan="5"> No Scheduled Interviews </td>
-                                                        <td><a href="/admin/addFeed>">Add Feed</a>
-                                                    </tr>
-                                                    <% } %>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <input type = "submit" value="Schedule" class="btn btn-primary btn-user btn-blockr" style="width: 100%;">
+                            </form>
                         </div>
                     </div>
     
@@ -131,8 +83,6 @@
         </div>
         <%- include('../layouts/footer.ejs')%>
     </div>
-    
-
 </div>
 
 
