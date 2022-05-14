@@ -117,7 +117,10 @@ const verifyLogin = async (req, res) => {
 const loadDashboard = async (req, res) => {
     try {
         const userData = await User.findById({ _id: req.session.user_id });
-        res.render('home', { admin: userData });
+        const video=userData.videos;
+        console.log(video)
+
+        res.render('home', { admin: userData,videoArr:video });
     } catch (error) {
         console.log(error.message)
     }
@@ -284,6 +287,7 @@ const loadInterview = async (req, res) => {
 
 const scheduleInterview = async (req, res) => {
     try {
+        
         const TraineeData=await User.find({is_Mentor:0});
         const MentorData=await User.find({is_Mentor:1});
         const dateF=req.body.mydate
@@ -411,10 +415,11 @@ const findSearchVideo=async(req,res)=>{
 
 const loadAddFeed=async(req,res)=>{
     try {
+        const currUser=await User.findById({_id:req.session.user_id})
         const user=await User.findById({_id:req.query.id})
         if(user){
             console.log(user)
-            res.render('addFeed',{users:user});
+            res.render('addFeed',{users:user,user:currUser});
         }
     } catch (error) {
         console.log(error.message)
