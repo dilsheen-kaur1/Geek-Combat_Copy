@@ -231,7 +231,7 @@ const addUser = async (req, res) => {
         const userData = await user.save();
         if (userData) {
             addUserMail(name, email, password, userData._id);
-            res.redirect('/admin/dashboard')
+            res.redirect('/admin/home')
         }
         else {
             res.render('new-user', { message: "Something Wrong" })
